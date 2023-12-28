@@ -1,0 +1,58 @@
+@use "sass:list";
+@use "sass:map";
+
+$color-primary: #008dff;
+
+$safe-area-inset-bottom: env(safe-area-inset-bottom, 0);
+
+$safe-area-inset-top: env(safe-area-inset-top, 0);
+
+$breack-points: xxl, xl, l, m, s, sx;
+
+$breack-points-min-width: (
+  "xxl": 1921px,
+  "xl": 1537px,
+  "l": 1281px,
+  "m": 1025px,
+  "s": 641px,
+  "sx": 0
+);
+
+$breack-points-max-width: (
+  "xxl": 9999px,
+  "xl": 1920px,
+  "l": 1536px,
+  "m": 1280px,
+  "s": 1024px,
+  "sx": 640px
+);
+
+@mixin breakpoint-strict($type) {
+  @if not list.index($breack-points, $type) {
+    @content();
+  } @else {
+    @each $var in $breack-points {
+      @if map.get($breack-points-min-width, $type) and
+        map.get(breack-points-max-width, $type)
+      {
+        @media (min-width: map.get($breack-points-min-width, $type)) and (max-width: map.get(breack-points-max-width, $type)) {
+          @content();
+        }
+      }
+    }
+  }
+}
+
+@mixin breakpoint($type) {
+  @if not list.index($breack-points, $type) {
+    @content();
+  } @else {
+    @each $var in $breack-points {
+      @if map.get($breack-points-max-width, $type) {
+        @media (max-width: map.get($breack-points-max-width, $type)) {
+          @content();
+        }
+      }
+    }
+  }
+}

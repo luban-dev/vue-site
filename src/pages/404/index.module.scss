@@ -1,0 +1,14 @@
+.box {
+  height: var(--app-main-height, 400px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  display: block;
+  flex: 0 0 auto;
+  width: 300px;
+  height: 200px;
+  object-fit: contain;
+}
