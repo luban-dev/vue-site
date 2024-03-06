@@ -5,18 +5,22 @@
   "description": "",
   "author": "Season Chen",
   "license": "MIT",
+  "homepage": "https://github.com/luban-dev/vue-site",
+  "repository": "https://github.com/luban-dev/vue-site",
   "scripts": {
     "dev": "vite",
     "prepare": "husky install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@luban-ui/vue-site-core": "^1.1.0",
+    "axios": "^1.6.3",
     "pinia": "^2.1.7",
     "pinia-di": "^3.1.2",
     "qs": "^6.11.2",
     "typescript": "^5.3.3",
     "vee-validate": "^4.12.4",
-    "vue": "^3.3.13",
+    "vue": "^3.4.3",
     "vue-i18n": "^9.8.0",
     "vue-router": "^4.2.5",
     "vue-router-better-scroller": "^0.0.0"

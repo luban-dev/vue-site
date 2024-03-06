@@ -1,2 +1,1 @@
-export * from './AppStore';
-export * from './globalStore';
+export * from './LocationStore';

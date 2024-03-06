@@ -24,6 +24,12 @@ const conf = defineConfig(() => {
           filename: './types-global/custom-env.d.ts',
           name: 'CustomEnv'
         }
+      },
+      i18n: {
+        enable: true,
+        options: {
+          include: path.join(__dirname, './src/locales/*.json')
+        }
       }
       // ...other options
     })],
